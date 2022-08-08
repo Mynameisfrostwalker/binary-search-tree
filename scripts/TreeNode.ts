@@ -2,18 +2,12 @@
 class TreeNode {
     data;
 
-    left;
+    left: TreeNode | null = null;
 
-    right;
+    right: TreeNode | null = null;
 
-    constructor(
-        data: unknown = null,
-        left: TreeNode | null = null,
-        right: TreeNode | null = null
-    ) {
+    constructor(data: unknown = null) {
         this.data = data;
-        this.left = left;
-        this.right = right;
     }
 }
 

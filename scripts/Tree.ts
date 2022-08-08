@@ -29,4 +29,39 @@ const mergeSort = (arr: number[]): number[] => {
     return newArr;
 }
 
+const removeDuplicates = (arr: number[]) => {
+    const copy = [...mergeSort(arr)];
+    for (let i = 0; i < copy.length; i += 1) {
+        if (copy[i] === copy[i - 1]) {
+            copy.splice(i, 1);
+            i -= 1;
+        }
+    }
+    return copy;
+}
 
+const buildTree = (arr: number[], start: number, end: number): TreeNode | null => {
+    if (start > end) {
+        return null
+    }
+
+    const mid = Math.floor((start + end) / 2);
+    const root = new TreeNode(arr[mid]);
+    root.left = buildTree(arr, 0, mid - 1);
+    root.right = buildTree(arr, mid + 1, end);
+
+    return root
+}
+
+class Tree {
+
+    root: TreeNode | null;
+
+    constructor(arr: number[]) {
+        const sortedArr = removeDuplicates(arr);
+        this.root = buildTree(sortedArr, 0, sortedArr.length - 1) 
+    }
+
+}
+
+console.log(new Tree([2, 2, 9, 1, 3, 3, 3, 4, 6, 5, 7, 7, 8]))

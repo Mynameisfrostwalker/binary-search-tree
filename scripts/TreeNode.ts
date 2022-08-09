@@ -6,7 +6,7 @@ class TreeNode {
 
     right: TreeNode | null = null;
 
-    constructor(data: unknown = null) {
+    constructor(data: number) {
         this.data = data;
     }
 }

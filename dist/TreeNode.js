@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class TreeNode {
-    constructor(data = null) {
+    constructor(data) {
         this.left = null;
         this.right = null;
         this.data = data;

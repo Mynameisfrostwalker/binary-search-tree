@@ -184,7 +184,6 @@ class Tree {
         if (node === null) {
             return arr;
         }
-
         
         if (func) {
             this.#postOrderNode(node.left, func); 
@@ -345,3 +344,4 @@ class Tree {
     }
 }
 
+export default Tree

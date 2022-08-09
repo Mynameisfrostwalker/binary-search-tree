@@ -280,4 +280,5 @@ _Tree_instances = new WeakSet(), _Tree_mergeSort = function _Tree_mergeSort(arr)
     }
     return left && right;
 };
+exports.default = Tree;
 //# sourceMappingURL=Tree.js.map
